@@ -74,11 +74,10 @@ app.get("/.well-known/apple-app-site-association", (req, res) => {
     const templatePath = path.join(__dirname, "./index.html");
     console.log(templatePath);
     // Replace handles with content
-    const source = fs.readFileSync(templatePath, {encoding: "utf-8"})
-      .replaceAll("{{title}}", title)
-      .replaceAll("{{subtitle}}", subtitle)
-      .replaceAll("{{image}}", image);
-      console.log();
+    // const source = fs.readFileSync(templatePath, {encoding: "utf-8"})
+    //   .replaceAll("{{title}}", title)
+    //   .replaceAll("{{subtitle}}", subtitle)
+    //   .replaceAll("{{image}}", image);
 
     // Return the webpage
     return res.send("<p> test</p>");
