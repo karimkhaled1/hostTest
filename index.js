@@ -4,7 +4,7 @@ require('dotenv').config({path: './.env'});
 
 const fs= require('fs')
 const app = express()
-const port = 80
+const port = 8080
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
