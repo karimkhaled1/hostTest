@@ -36,6 +36,7 @@ app.get("/.well-known/apple-app-site-association", (req, res) => {
         ],
       },
     }));
+    console.log(applicationID)
     res.end();
   });
   
@@ -58,7 +59,9 @@ app.get("/.well-known/apple-app-site-association", (req, res) => {
         },
       }]
     ));
-    res.end();
+    console.log(applicationID)
+
+    res.end(YOUR_PACKAGE_NAME);
   });
   
   app.get("*", (req, res, next) => {
