@@ -65,21 +65,20 @@ app.get("/.well-known/apple-app-site-association", (req, res) => {
   });
   
   app.get("*", (req, res, next) => {
-    // Define values
-    const title = "My Amazing Application";
-    const subtitle = "Find out more about my app...";
-    const image = "https://.../your-app-banner.jpg";
-  
+    const title = 'My Amazing Application';
+    const subtitle = 'Find out more about my app...';
+    const image = 'https://.../your-app-banner.jpg';
+
     // Load HTML template
-    const templatePath = path.join(__dirname, "./index.html");
-    console.log(templatePath);
+    const templatePath = path.join(__dirname, './index.html');
+
     // Replace handles with content
-    // const source = fs.readFileSync(templatePath, {encoding: "utf-8"})
-    //   .replaceAll("{{title}}", title)
-    //   .replaceAll("{{subtitle}}", subtitle)
-    //   .replaceAll("{{image}}", image);
+    var source = fs.readFileSync(templatePath, { encoding: 'utf-8' })
+        .replaceAll('{{title}}', title)
+        .replaceAll('{{subtitle}}', subtitle)
+        .replaceAll('{{image}}', image);
 
     // Return the webpage
-    return res.send("<p> test</p>");
+    return res.send(source);
   });
   
