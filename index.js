@@ -71,10 +71,10 @@ app.get("/.well-known/apple-app-site-association", (req, res) => {
     let YOUR_PACKAGE_NAME=(process.env.YOUR_PACKAGE_NAME);
     const templatePath = path.join(__dirname, 'index.html');
     var source = fs.readFileSync(templatePath, { encoding: 'utf-8' })
-        .replaceAll('{{title}}', title)
-        .replaceAll('{{subtitle}}', subtitle)
-        .replaceAll('{{image}}', image)
-        .replaceAll('{{YOUR_APP_ID}}',YOUR_PACKAGE_NAME);
+        .replace('{{title}}', title)
+        .replace('{{subtitle}}', subtitle)
+        .replace('{{image}}', image)
+        .replace('{{YOUR_APP_ID}}',YOUR_PACKAGE_NAME);
 
     return res.send(source);
   });
