@@ -11,8 +11,6 @@ app.listen(port, () => {
 })
 
 
-
-
 app.get("/.well-known/apple-app-site-association", (req, res) => {
     let teamId=(process.env.teamId);
     let applicationPackage=(process.env.applicationID);
@@ -25,6 +23,8 @@ app.get("/.well-known/apple-app-site-association", (req, res) => {
         "details": [{
           "appID": applicationID,
           "paths": [
+            "/",
+            "*.html",
             "/login",
             "/properties-rent-collection-payment",
           ],
@@ -67,18 +67,15 @@ app.get("/.well-known/apple-app-site-association", (req, res) => {
   app.get("*", (req, res, next) => {
     const title = 'My Amazing Application';
     const subtitle = 'Find out more about my app...';
-    const image = 'https://.../your-app-banner.jpg';
-
-    // Load HTML template
-    const templatePath = path.join(__dirname, './index.html');
-
-    // Replace handles with content
+    const image = 'https://dashboard.render.com/static/media/logo-redesign-02-word-dark.0811da26fe4b1f9a9b6c642d91bbcf73.svg';
+    let YOUR_PACKAGE_NAME=(process.env.YOUR_PACKAGE_NAME);
+    const templatePath = path.join(__dirname, 'index.html');
     var source = fs.readFileSync(templatePath, { encoding: 'utf-8' })
         .replaceAll('{{title}}', title)
         .replaceAll('{{subtitle}}', subtitle)
-        .replaceAll('{{image}}', image);
+        .replaceAll('{{image}}', image)
+        .replaceAll('{{YOUR_APP_ID}}',YOUR_PACKAGE_NAME);
 
-    // Return the webpage
     return res.send(source);
   });
   

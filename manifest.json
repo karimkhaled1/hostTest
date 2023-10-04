@@ -1,0 +1,46 @@
+{
+    "name": "KIB Aqari",
+    "short_name": "Aqari",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#0175C2",
+    "theme_color": "#0175C2",
+    "description": "Kuwait international bank real estate services.",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": true,
+    "related_applications": [
+      {
+        "platform": "play",
+        "id": "com.kib.aqari"
+      },
+      {
+        "platform": "itunes",
+        "url": "https://apps.apple.com/kw/app/kib-aqari/id6447563934"
+      }
+    ],
+    "icons": [
+      {
+        "src": "icons/Icon-192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "icons/Icon-512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      },
+      {
+        "src": "icons/Icon-maskable-192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "maskable"
+      },
+      {
+        "src": "icons/Icon-maskable-512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "maskable"
+      }
+    ]
+  }
+  
