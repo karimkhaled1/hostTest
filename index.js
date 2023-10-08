@@ -12,16 +12,16 @@ app.listen(port, () => {
 
 
 app.get("/.well-known/apple-app-site-association", (req, res) => {
-    // let teamId=(process.env.teamId);
+    let teamId=(process.env.teamId);
     let applicationPackage=(process.env.applicationID);
-    let applicationID = `${applicationPackage}`;
+    let applicationID = `${teamId}.${applicationPackage}`;
   
     res.writeHead(200, {"Content-Type": "application/json"});
     res.write(JSON.stringify({
       "applinks": {
         "apps": [],
         "details": [{
-          "appID": applicationID,
+          "appIDs": [ applicationID ],
           "paths": [
             "/",
             "*.html",
