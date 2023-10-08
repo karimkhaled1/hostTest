@@ -31,10 +31,8 @@ app.get("/.well-known/apple-app-site-association", (req, res) => {
         }],
       },
       "webcredentials": {
-        "apps": [
-          applicationID,
-        ],
-      },
+        "apps": [ applicationID]
+     },
     }));
     console.log(applicationID)
     res.end();
