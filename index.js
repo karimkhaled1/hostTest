@@ -67,13 +67,17 @@ app.get("/.well-known/apple-app-site-association", (req, res) => {
     const subtitle = 'Find out more about my app...';
     const image = 'https://dashboard.render.com/static/media/logo-redesign-02-word-dark.0811da26fe4b1f9a9b6c642d91bbcf73.svg';
     let package_name=(process.env.package_name);
+    let teamId=(process.env.teamId);
+
     const templatePath = path.join(__dirname, 'index.html');
+    
     var source = fs.readFileSync(templatePath, { encoding: 'utf-8' })
         .replace('{{title}}', title)
         .replace('{{subtitle}}', subtitle)
         .replace('{{image}}', image)
         .replace('{{YOUR_APP_ID}}',package_name)
         .replace('{{YOUR_APP_ID}}',package_name)
+        .replace('{{TEAM_ID}}',teamId)
         
         ;
 
