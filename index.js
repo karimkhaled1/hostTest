@@ -78,6 +78,7 @@ app.get("/.well-known/apple-app-site-association", (req, res) => {
         .replace('{{YOUR_APP_ID}}',package_name)
         .replace('{{YOUR_APP_ID}}',package_name)
         .replace('{{appId}}',appId)
+        .replace('{{appId}}',appId)
         
         ;
 
